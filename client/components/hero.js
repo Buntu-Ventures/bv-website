@@ -18,7 +18,7 @@ const Hero = () => {
                color: "white"
            }}>
                <div style={{maxWidth: 800, textAlign: 'center', lineHeight: '4rem'}}>
-               We build product that positively impact our daily lives
+               We build products that positively impact our daily lives
                </div>
            </div>
 
