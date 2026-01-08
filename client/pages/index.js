@@ -38,10 +38,11 @@ const HomePage = () => {
                     <a id="about"/>
                     <h2>Who We Are</h2>
                     <p>
-                        Buntu Ventures is an entrepenerial investment firm focused to building and investing in physical and digital products with the goal to have a positive impact at every stage of the business cycle. 
+                        Buntu Ventures is a consulting and venture-building company. We provide consulting, management, marketing, business development, and coaching to clients. Alongside client work, we build internal, self-funded digital products and in-house projects using only our own capital.
+ 
                     </p>
                     <p>
-                        From our employees to our customers with the help of trusted partners we aim to provide value to everyone with whom we come in contact with.
+                        We are not an investment fund and we do not accept or manage third-party capital.
                     </p>
                 </div>
                 <a id="careers"/>
