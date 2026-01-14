@@ -19,7 +19,7 @@ const Hero4 = () => {
                <div style={{}} className="heroHeadline">
                 
                 <p>{new Date().getFullYear()} © Buntu Ventures Ltd. All Rights Reserved.</p>
-                <p>Call us: <a href="tel:+555555555">1-888-754-5245</a></p>
+                <p>Call us: <a href="tel:+1(343)3395252">+1(343)339-5252</a></p>
                 <p>Write to us: <a href="mailto:info@buntuventures.com">info@buntuventures.com</a></p>
                 
                 
