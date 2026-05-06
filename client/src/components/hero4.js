@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
-import Button from '@mui/material/Button';
-import LocationIcon from '@mui/icons-material/Room'
+'use client';
 
 const Hero4 = () => {
     

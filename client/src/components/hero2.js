@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
+'use client';
+
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send'
-import { email } from '../constants'
+import { email } from '@/lib/site'
 
 const Hero2 = () => {
     

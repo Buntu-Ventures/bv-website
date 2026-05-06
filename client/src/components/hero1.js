@@ -1,7 +1,24 @@
-import React from 'react'
+'use client';
 
 const logos = [
-    { id: 'resiliaid', className: 'logoResili', graphic: (
+    {
+        id: 'resiliaid',
+        className: 'logoResili',
+        style: {
+            '--slot-desktop': '152px',
+            '--slot-tablet': '134px',
+            '--slot-mobile': '88px',
+            '--art-desktop-width': '126px',
+            '--art-desktop-height': '36px',
+            '--art-tablet-width': '112px',
+            '--art-tablet-height': '32px',
+            '--art-mobile-width': '76px',
+            '--art-mobile-height': '24px',
+            '--art-offset-desktop': '1px',
+            '--art-offset-tablet': '1px',
+            '--art-offset-mobile': '0px',
+        },
+        graphic: (
         <svg viewBox="0 0 240 70" role="img" aria-label="ResiliAid.org logo">
             <g fill="none" stroke="currentColor" strokeWidth="3">
                 <path d="M35 8 L52 16 L52 35 C52 47 43 57 35 61 C27 57 18 47 18 35 L18 16 Z"/>
@@ -12,7 +29,24 @@ const logos = [
             <text x="68" y="61" fill="currentColor" fontSize="31" fontWeight="600" fontFamily="inherit">Aid.org</text>
         </svg>
     )},
-    { id: 'globe', className: 'logoGlobe', graphic: (
+    {
+        id: 'globe',
+        className: 'logoGlobe',
+        style: {
+            '--slot-desktop': '74px',
+            '--slot-tablet': '64px',
+            '--slot-mobile': '52px',
+            '--art-desktop-width': '52px',
+            '--art-desktop-height': '52px',
+            '--art-tablet-width': '46px',
+            '--art-tablet-height': '46px',
+            '--art-mobile-width': '34px',
+            '--art-mobile-height': '34px',
+            '--art-offset-desktop': '-1px',
+            '--art-offset-tablet': '-1px',
+            '--art-offset-mobile': '-1px',
+        },
+        graphic: (
         <svg viewBox="0 0 72 72" role="img" aria-label="Globe and handshake logo">
             <g fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="36" cy="30" r="20"/>
@@ -23,7 +57,24 @@ const logos = [
             </g>
         </svg>
     )},
-    { id: 'claate', className: 'logoClaate', graphic: (
+    {
+        id: 'claate',
+        className: 'logoClaate',
+        style: {
+            '--slot-desktop': '150px',
+            '--slot-tablet': '132px',
+            '--slot-mobile': '86px',
+            '--art-desktop-width': '136px',
+            '--art-desktop-height': '32px',
+            '--art-tablet-width': '120px',
+            '--art-tablet-height': '28px',
+            '--art-mobile-width': '72px',
+            '--art-mobile-height': '23px',
+            '--art-offset-desktop': '0px',
+            '--art-offset-tablet': '0px',
+            '--art-offset-mobile': '0px',
+        },
+        graphic: (
         <svg viewBox="0 0 210 54" role="img" aria-label="Claate logo">
             <g fill="none" stroke="currentColor" strokeWidth="2.8">
                 <rect x="8" y="17" width="20" height="20" rx="2" transform="rotate(45 18 27)"/>
@@ -31,7 +82,24 @@ const logos = [
             <text x="42" y="36" fill="currentColor" fontSize="42" fontWeight="600" fontFamily="inherit">Claate</text>
         </svg>
     )},
-    { id: 'rmono', className: 'logoR', graphic: (
+    {
+        id: 'rmono',
+        className: 'logoR',
+        style: {
+            '--slot-desktop': '72px',
+            '--slot-tablet': '62px',
+            '--slot-mobile': '48px',
+            '--art-desktop-width': '54px',
+            '--art-desktop-height': '54px',
+            '--art-tablet-width': '46px',
+            '--art-tablet-height': '46px',
+            '--art-mobile-width': '34px',
+            '--art-mobile-height': '34px',
+            '--art-offset-desktop': '-1px',
+            '--art-offset-tablet': '-1px',
+            '--art-offset-mobile': '-1px',
+        },
+        graphic: (
         <svg viewBox="0 0 76 76" role="img" aria-label="R monogram logo">
             <g fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round">
                 <polygon points="38,5 63,19 63,48 38,63 13,48 13,19"/>
@@ -44,8 +112,8 @@ const logos = [
             </g>
             <text x="31" y="47" fill="currentColor" fontSize="36" fontWeight="700" fontFamily="Georgia, serif">R</text>
         </svg>
-    )}
-]
+    )},
+];
 
 const Hero = () => {
     return(
@@ -55,8 +123,10 @@ const Hero = () => {
                 <div className="trustBlock">
                     <p className="trustedBy">Trusted by</p>
                     <div className="logoPill" aria-label="Client logo strip">
-                        {logos.map(({ id, className, graphic }) => (
-                            <div key={id} className={`logoItem ${className}`}>{graphic}</div>
+                        {logos.map(({ id, className, style, graphic }) => (
+                            <div key={id} className={`logoItem ${className}`} style={style}>
+                                <span className="logoArt">{graphic}</span>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -115,30 +185,32 @@ const Hero = () => {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                margin-bottom: 74px;
+                margin-bottom: 62px;
             }
 
             .trustedBy {
-                margin: 0 0 6px;
-                font-size: 0.88rem;
+                margin: 0 0 4px;
+                font-size: 0.84rem;
                 line-height: 1.2;
-                letter-spacing: 0.035em;
-                color: rgba(240, 245, 255, 0.8);
-                font-weight: 500;
+                letter-spacing: 0.04em;
+                color: rgba(236, 240, 249, 0.72);
+                font-weight: 400;
             }
 
             .logoPill {
-                width: min(640px, 82%);
-                height: 82px;
-                display: grid;
-                grid-template-columns: 1.25fr 0.78fr 1fr 0.72fr;
+                width: min(568px, calc(100% - 48px));
+                min-height: 76px;
+                display: flex;
+                justify-content: center;
                 align-items: center;
-                gap: 10px;
+                gap: 18px;
                 padding: 0 28px;
                 border-radius: 999px;
-                border: 1px solid rgba(229, 236, 255, 0.23);
-                background: linear-gradient(102deg, rgba(153, 169, 226, 0.16), rgba(74, 86, 142, 0.11) 50%, rgba(45, 58, 110, 0.12));
-                box-shadow: inset 0 0 0 1px rgba(245, 248, 255, 0.02);
+                border: 1px solid rgba(225, 233, 255, 0.15);
+                background: linear-gradient(99deg, rgba(27, 38, 78, 0.42), rgba(21, 29, 62, 0.56) 52%, rgba(18, 24, 54, 0.46));
+                box-shadow: inset 0 1px 0 rgba(247, 249, 255, 0.04);
+                backdrop-filter: blur(14px);
+                -webkit-backdrop-filter: blur(14px);
                 position: relative;
                 overflow: hidden;
             }
@@ -147,42 +219,36 @@ const Hero = () => {
                 content: '';
                 position: absolute;
                 inset: 0;
-                background: linear-gradient(136deg, rgba(255, 255, 255, 0.12) 8%, rgba(255, 255, 255, 0.03) 36%, rgba(255, 255, 255, 0.02) 52%, rgba(255, 255, 255, 0) 75%);
-                opacity: 0.28;
+                background: linear-gradient(128deg, rgba(255, 255, 255, 0.08) 6%, rgba(255, 255, 255, 0.02) 36%, rgba(255, 255, 255, 0) 70%);
+                opacity: 0.2;
                 pointer-events: none;
             }
 
             .logoItem {
-                color: rgba(244, 247, 255, 0.9);
+                width: var(--slot-desktop);
+                min-width: var(--slot-desktop);
+                height: 54px;
+                color: rgba(242, 245, 253, 0.88);
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 z-index: 1;
-                min-height: 42px;
+                flex: 0 0 auto;
             }
 
-            .logoItem :global(svg) {
+            .logoArt {
+                width: var(--art-desktop-width);
+                height: var(--art-desktop-height);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: translateY(var(--art-offset-desktop));
+            }
+
+            .logoArt :global(svg) {
                 display: block;
                 width: 100%;
-                height: auto;
-            }
-
-            .logoResili {
-                max-width: 182px;
-                justify-self: start;
-            }
-
-            .logoGlobe {
-                width: 58px;
-            }
-
-            .logoClaate {
-                max-width: 154px;
-            }
-
-            .logoR {
-                width: 56px;
-                justify-self: end;
+                height: 100%;
             }
 
             .heroContent {
@@ -223,27 +289,32 @@ const Hero = () => {
                     padding-top: 96px;
                 }
 
+                .trustBlock {
+                    margin-bottom: 54px;
+                }
+
+                .trustedBy {
+                    margin-bottom: 3px;
+                    font-size: 0.8rem;
+                }
+
                 .logoPill {
-                    width: 90%;
-                    padding: 0 20px;
-                    height: 76px;
-                    gap: 10px;
+                    width: min(526px, calc(100% - 36px));
+                    min-height: 72px;
+                    padding: 0 24px;
+                    gap: 14px;
                 }
 
-                .logoResili {
-                    max-width: 150px;
+                .logoItem {
+                    width: var(--slot-tablet);
+                    min-width: var(--slot-tablet);
+                    height: 48px;
                 }
 
-                .logoGlobe {
-                    width: 50px;
-                }
-
-                .logoClaate {
-                    max-width: 132px;
-                }
-
-                .logoR {
-                    width: 50px;
+                .logoArt {
+                    width: var(--art-tablet-width);
+                    height: var(--art-tablet-height);
+                    transform: translateY(var(--art-offset-tablet));
                 }
 
                 .copyBlock h1 {
@@ -260,6 +331,14 @@ const Hero = () => {
                     min-height: 720px;
                 }
 
+                .trustBlock {
+                    margin-bottom: 42px;
+                }
+
+                .trustedBy {
+                    display: none;
+                }
+
                 .heroContent {
                     grid-template-columns: 1fr;
                     gap: 20px;
@@ -271,21 +350,45 @@ const Hero = () => {
                 }
 
                 .logoPill {
-                    height: auto;
-                    border-radius: 20px;
-                    grid-template-columns: repeat(2, minmax(0, 1fr));
-                    padding: 12px 18px;
-                    gap: 10px 16px;
+                    width: min(326px, calc(100% - 24px));
+                    min-height: 68px;
+                    padding: 8px 0;
+                    gap: 8px;
+                    border: 0;
+                    border-radius: 0;
+                    background: none;
+                    box-shadow: none;
+                    backdrop-filter: none;
+                    -webkit-backdrop-filter: none;
+                    overflow: visible;
                 }
 
-                .logoResili, .logoClaate {
-                    max-width: 132px;
-                    justify-self: center;
+                .logoPill:before {
+                    display: none;
                 }
 
-                .logoGlobe, .logoR {
-                    width: 46px;
-                    justify-self: center;
+                .logoPill:after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    width: 100%;
+                    height: 34px;
+                    transform: translate(-50%, -50%);
+                    background: radial-gradient(ellipse at center, rgba(215, 224, 255, 0.12) 0%, rgba(215, 224, 255, 0.06) 40%, rgba(215, 224, 255, 0) 78%);
+                    pointer-events: none;
+                }
+
+                .logoItem {
+                    width: var(--slot-mobile);
+                    min-width: var(--slot-mobile);
+                    height: 38px;
+                }
+
+                .logoArt {
+                    width: var(--art-mobile-width);
+                    height: var(--art-mobile-height);
+                    transform: translateY(var(--art-offset-mobile));
                 }
 
                 .copyBlock h1 {

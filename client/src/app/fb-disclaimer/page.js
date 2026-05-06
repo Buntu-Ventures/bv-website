@@ -1,15 +1,19 @@
-import React from 'react'
-import Hero4 from '../components/hero4'
-import Nav from '../components/nav/nav'
-import { address, email, phoneNumber } from '../constants'
+/* eslint-disable react/no-unescaped-entities */
 
-function FBDisclaimer() {
+import Hero4 from '@/components/hero4';
+import Nav from '@/components/nav/nav';
+import { address, email, phoneNumber } from '@/lib/site';
 
-    return(
-        <>
-        <Nav />
-        <hr />
-        <div className="fbppPage">
+export const metadata = {
+  title: 'Facebook Legal Notice and Disclaimer',
+};
+
+export default function FBDisclaimer() {
+  return (
+    <>
+      <Nav />
+      <hr />
+      <div style={{ maxWidth: 800, margin: 'auto' }}>
         <h1>
             Facebook Legal Notice and Disclaimer
 
@@ -59,20 +63,9 @@ function FBDisclaimer() {
 <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us at our email: Call us at: {phoneNumber}Or write to us (according to topic):  {email}  Buntu Ventures Ltd. {address}</p>
 
 <p>PRIVACY POLICY UPDATED AS OF APRIL 15, 2021.</p>
+      </div>
 
-        <style jsx>{`
-            .fbppPage {
-                max-width: 800px;
-                margin: auto;
-            }
-
-
-        `}</style>
-        </div>
-
-        <Hero4 />
-        </>
-    )
+      <Hero4 />
+    </>
+  );
 }
-
-export default FBDisclaimer
