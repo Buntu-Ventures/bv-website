@@ -1,50 +1,10 @@
 import React from 'react'
 
 const logos = [
-    { id: 'resiliaid', className: 'logoResili', graphic: (
-        <svg viewBox="0 0 240 70" role="img" aria-label="ResiliAid.org logo">
-            <g fill="none" stroke="currentColor" strokeWidth="3">
-                <path d="M35 8 L52 16 L52 35 C52 47 43 57 35 61 C27 57 18 47 18 35 L18 16 Z"/>
-                <circle cx="35" cy="32" r="11"/>
-                <path d="M29 33 l5 5 8-10"/>
-            </g>
-            <text x="68" y="35" fill="currentColor" fontSize="31" fontWeight="600" fontFamily="inherit">Resilii</text>
-            <text x="68" y="61" fill="currentColor" fontSize="31" fontWeight="600" fontFamily="inherit">Aid.org</text>
-        </svg>
-    )},
-    { id: 'globe', className: 'logoGlobe', graphic: (
-        <svg viewBox="0 0 72 72" role="img" aria-label="Globe and handshake logo">
-            <g fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="36" cy="30" r="20"/>
-                <path d="M16 30h40M36 10c8 6 11 13 11 20S44 44 36 50M36 10c-8 6-11 13-11 20s3 14 11 20"/>
-                <path d="M23 52c4 3 7 5 13 5s9-2 13-5"/>
-                <path d="M36 50v14"/>
-                <path d="M29 64h14"/>
-            </g>
-        </svg>
-    )},
-    { id: 'claate', className: 'logoClaate', graphic: (
-        <svg viewBox="0 0 210 54" role="img" aria-label="Claate logo">
-            <g fill="none" stroke="currentColor" strokeWidth="2.8">
-                <rect x="8" y="17" width="20" height="20" rx="2" transform="rotate(45 18 27)"/>
-            </g>
-            <text x="42" y="36" fill="currentColor" fontSize="42" fontWeight="600" fontFamily="inherit">Claate</text>
-        </svg>
-    )},
-    { id: 'rmono', className: 'logoR', graphic: (
-        <svg viewBox="0 0 76 76" role="img" aria-label="R monogram logo">
-            <g fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round">
-                <polygon points="38,5 63,19 63,48 38,63 13,48 13,19"/>
-                <circle cx="38" cy="5" r="2.2" fill="currentColor"/>
-                <circle cx="63" cy="19" r="2.2" fill="currentColor"/>
-                <circle cx="63" cy="48" r="2.2" fill="currentColor"/>
-                <circle cx="38" cy="63" r="2.2" fill="currentColor"/>
-                <circle cx="13" cy="48" r="2.2" fill="currentColor"/>
-                <circle cx="13" cy="19" r="2.2" fill="currentColor"/>
-            </g>
-            <text x="31" y="47" fill="currentColor" fontSize="36" fontWeight="700" fontFamily="Georgia, serif">R</text>
-        </svg>
-    )}
+    { id: 'resiliaid', className: 'logoResili', src: '/img/one.webp', alt: 'ResiliAid.org' },
+    { id: 'globe', className: 'logoGlobe', src: '/img/two.webp', alt: 'Globe and handshake logo' },
+    { id: 'claate', className: 'logoClaate', src: '/img/three.webp', alt: 'Claate' },
+    { id: 'rmono', className: 'logoR', src: '/img/five.webp', alt: 'R monogram' }
 ]
 
 const Hero = () => {
@@ -55,8 +15,10 @@ const Hero = () => {
                 <div className="trustBlock">
                     <p className="trustedBy">Trusted by</p>
                     <div className="logoPill" aria-label="Client logo strip">
-                        {logos.map(({ id, className, graphic }) => (
-                            <div key={id} className={`logoItem ${className}`}>{graphic}</div>
+                        {logos.map(({ id, className, src, alt }) => (
+                            <div key={id} className={`logoItem ${className}`}>
+                                <img src={src} alt={alt} className="trustLogo" />
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -153,36 +115,45 @@ const Hero = () => {
             }
 
             .logoItem {
-                color: rgba(244, 247, 255, 0.9);
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 z-index: 1;
-                min-height: 42px;
+                min-height: 64px;
             }
 
-            .logoItem :global(svg) {
+            .trustLogo {
                 display: block;
-                width: 100%;
+                width: auto;
                 height: auto;
+                max-width: 100%;
+                object-fit: contain;
+                filter: brightness(0) invert(1);
+                opacity: 0.9;
             }
 
             .logoResili {
-                max-width: 182px;
                 justify-self: start;
             }
 
-            .logoGlobe {
-                width: 58px;
+            .logoResili .trustLogo {
+                max-height: 38px;
             }
 
-            .logoClaate {
-                max-width: 154px;
+            .logoGlobe .trustLogo {
+                max-height: 44px;
+            }
+
+            .logoClaate .trustLogo {
+                max-height: 28px;
             }
 
             .logoR {
-                width: 56px;
                 justify-self: end;
+            }
+
+            .logoR .trustLogo {
+                max-height: 44px;
             }
 
             .heroContent {
@@ -230,20 +201,20 @@ const Hero = () => {
                     gap: 10px;
                 }
 
-                .logoResili {
-                    max-width: 150px;
+                .logoResili .trustLogo {
+                    max-height: 32px;
                 }
 
-                .logoGlobe {
-                    width: 50px;
+                .logoGlobe .trustLogo {
+                    max-height: 38px;
                 }
 
-                .logoClaate {
-                    max-width: 132px;
+                .logoClaate .trustLogo {
+                    max-height: 24px;
                 }
 
-                .logoR {
-                    width: 50px;
+                .logoR .trustLogo {
+                    max-height: 38px;
                 }
 
                 .copyBlock h1 {
@@ -279,13 +250,27 @@ const Hero = () => {
                 }
 
                 .logoResili, .logoClaate {
-                    max-width: 132px;
                     justify-self: center;
                 }
 
                 .logoGlobe, .logoR {
-                    width: 46px;
                     justify-self: center;
+                }
+
+                .logoResili .trustLogo {
+                    max-height: 30px;
+                }
+
+                .logoGlobe .trustLogo {
+                    max-height: 32px;
+                }
+
+                .logoClaate .trustLogo {
+                    max-height: 22px;
+                }
+
+                .logoR .trustLogo {
+                    max-height: 34px;
                 }
 
                 .copyBlock h1 {
