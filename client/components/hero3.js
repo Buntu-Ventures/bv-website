@@ -1,5 +1,6 @@
-'use client';
-
+import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
+import Button from '@mui/material/Button';
 import LocationIcon from '@mui/icons-material/Room'
 
 const Hero3 = () => {

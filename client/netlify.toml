@@ -3,4 +3,6 @@
   command = "npm run build"
 
 [build.environment]
-  NODE_VERSION = "22"
+  NODE_VERSION = "18"
+  NODE_OPTIONS = "--openssl-legacy-provider"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"

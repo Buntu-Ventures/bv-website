@@ -1,25 +1,22 @@
-/* eslint-disable react/no-unescaped-entities */
+import React from 'react'
+import Hero4 from '../components/hero4'
+import Nav from '../components/nav/nav'
+import { address, email, phoneNumber } from '../constants'
 
-import Hero4 from '@/components/hero4';
-import Nav from '@/components/nav/nav';
-import { address, email, phoneNumber } from '@/lib/site';
+function Privacy() {
 
-export const metadata = {
-  title: 'Cookies And Tracking Privacy',
-};
+    return(
+        <>
+        <Nav />
+        <hr />
+        <div className="ppPage">
+            <h1>
+            Cookies And Tracking Privacy
 
-export default function Privacy() {
-  return (
-    <>
-      <Nav />
-      <hr />
-      <div style={{ maxWidth: 800, margin: 'auto' }}>
-        <h1>
-          Cookies And Tracking Privacy
-        </h1>
+            </h1>
             <p>Buntu Ventures Ltd. ("buntuventures.com", "www.buntuventures.com", &quot;we&quot;, &quot;our&quot; or &quot;us&quot;) understand that you entrust us with personal information, and we take seriously our data privacy obligations. We strive to make you feel comfortable with the measures we take to protect and safeguard your personal information. This Cookies and Tracking Policy (&quot;Policy&quot;) describes in detail how we handle information that we collect through our various digital channels such as our website and mobile applications. For example for a website by clicking &quot;I agree&quot; to the popup describing our website tracking tools, or by clicking &quot;accept&quot; on the mobile applications when you first access either our website or our mobile applications you agree to our use of your information as described in this Policy and in accordance with the particular privacy settings you selected.</p>
 
-            <p><b>Facebook legal notice and disclaimer is available <a href="/fb-disclaimer">here</a></b> (please right click and open in a new page if necessary)</p>
+            <p><b>Facebook legal notice and disclaimer is available <a href="fb-disclaimer">here</a></b> (please right click and open in a new page if necessary)</p>
 
             <h2>PRIVACY AND COOKIE POLICY</h2>
 
@@ -185,13 +182,25 @@ export default function Privacy() {
 
             <p>Or write to us (according to topic):</p>
 
-            <p><a href={`mailto:${email}`}>{email}</a></p>
+            <p><a href={`mailto:{email}`}>{email}</a></p>
 
             <p>Buntu Ventures Ltd., {address}</p>
 
             <p>PRIVACY POLICY UPDATED AS OF APRIL 15, 2021.</p>
-      </div>
-      <Hero4 />
-    </>
-  );
+
+<style jsx>{`
+
+.ppPage {
+    max-width: 800px;
+    margin: auto;
 }
+
+`}</style>
+        </div>
+        <Hero4 />
+        </>
+        
+    )
+}
+
+export default Privacy
